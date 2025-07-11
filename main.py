@@ -10,12 +10,9 @@ from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 import webbrowser
 
 class UrlOpener:
-    def __init__(self):
-        webbrowser.register('chrome', None, webbrowser.BackgroundBrowser('/usr/bin/google-chrome'))
-        
     def open(self, url):
         url = self.complete_url(url)
-        webbrowser.get('chrome').open(url)
+        webbrowser.open(url)
             
     def complete_url(self, url):
         if url == None:
@@ -48,7 +45,7 @@ class KeywordQueryEventListener(EventListener):
             ExtensionResultItem(
                 icon='images/icon.png',
                 name= f"Open in browser",
-                description= f"Open url {url_opener.complete_url(event.get_argument())} in chrome",
+                description= f"Open url {url_opener.complete_url(event.get_argument())} in {webbrowser.get().name}",
                 on_enter=ExtensionCustomAction({"url":event.get_argument()}, keep_app_open=False))
         ]
 

@@ -2,7 +2,8 @@
 ## Overview
 An extension for ulauncher app for **linux**. 
 - Lets you open urls directly inside ulauncher
-- **You need chrome installed in your device for this extension!**
+- ~~**You need chrome installed in your device for this extension!**~~
+- The extension can now open URLs in your default browser.
 
 ## Examples
 - ```open youtube```
